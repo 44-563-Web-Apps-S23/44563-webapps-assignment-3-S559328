@@ -67,6 +67,22 @@
             <hr>
             <h4>Sample HTML Code Snippet</h4>
             <blockquote>Looking for Shuffle children with HTML in stack overflow website</blockquote>
-            <pre><a href="https://stackoverflow.com/questions/34614086/shuffle-randomize-a-set-of-divs-with-two-child-elements">Click to open sample code snippet in stack overflow</a></pre>
+            <a href="https://stackoverflow.com/questions/34614086/shuffle-randomize-a-set-of-divs-with-two-child-elements">Click to open sample in stack overflow</a>
+            <br>
+            <a href="https://css-tricks.com/snippets/jquery/shuffle-children/">Code snippet refernce link</a>
+            <pre>$.fn.shuffleChildren = function() {
+                $.each(this.get(), function(index, el) {
+                    var $el = $(el);
+                    var $find = $el.children();
+            
+                    $find.sort(function() {
+                        return 0.5 - Math.random();
+                    });
+            
+                    $el.empty();
+                    $find.appendTo($el);
+                });
+            };
+        </pre>
     </body>
 </html>
